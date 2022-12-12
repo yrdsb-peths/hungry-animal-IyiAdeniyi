@@ -76,7 +76,6 @@ public class Elephant extends Actor
         eat();
         
         //Animate the elphant
-        
         animateElephant();
     }
     
@@ -90,6 +89,5 @@ public class Elephant extends Actor
             world.increaseScore();
             elephantSound.play();
         }
-
     }
 }
