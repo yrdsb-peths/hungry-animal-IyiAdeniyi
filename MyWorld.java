@@ -3,12 +3,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class MyWorld here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Iyi Adeniyi
+ * @version 2022 - 12 - 12
  */
 public class MyWorld extends World
 {
     public int score = 0;
+    public boolean gameOver = false;
+
     Label scoreLabel;
     
     int level = 1;
@@ -31,11 +33,23 @@ public class MyWorld extends World
         
         createApple();
     }
-    
     public void gameOver()
     {
         Label gameOverLabel = new Label("Game over", 100);
-        addObject(gameOverLabel, 300, 200);
+        addObject(gameOverLabel, 300, 100);
+        Label resetGame = new Label("press space bar to play again", 50);
+        addObject(resetGame, 300, 200);
+        boolean gameOver = true;
+        
+    }
+    
+    public void act()
+    {
+        if(Greenfoot.isKeyDown("space"))
+        {
+            TitleScreen a = new TitleScreen();
+            Greenfoot.setWorld(a);
+        }
     }
     
     public void increaseScore()

@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class TitleScreen extends World
 {
-    Label titleLabel = new Label("The Elephant", 60);
     /**
      * Constructor for objects of class TitleScreen.
      * 
@@ -17,13 +16,17 @@ public class TitleScreen extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
+        scoreLabel = new Label(0, 80);
 
-        addObject(titleLabel, 170, 110);
         prepare();
     }
 
+    /**
+     * THe main world act loop
+     */
     public void act()
     {
+        //stat the game if the user presses space bar
         if(Greenfoot.isKeyDown("space"))
         {
             MyWorld gameWorld = new MyWorld();
@@ -39,12 +42,16 @@ public class TitleScreen extends World
     {
         Elephant elephant = new Elephant();
         addObject(elephant,399,97);
-        elephant.setLocation(456,133);
-        elephant.setLocation(460,141);
-        elephant.setLocation(409,125);
+
         Label label = new Label("press <space> to start", 40);
         addObject(label,216,228);
+
         Label label2 = new Label("use \u2190 and \u2192 to move", 40);
         addObject(label2,214,288);
+
+        Title title = new Title();
+        addObject(title,309,36);
+
+        elephant.setLocation(477,268);
     }
 }
