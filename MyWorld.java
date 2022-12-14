@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-    public static int score = 0;
+    public int score = 0;
     public static int highscore;
     
     Label scoreLabel;
