@@ -2,6 +2,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class MyWorld here.
+ * This is a game that have an elephant eating apples.
  * 
  * @author Iyi Adeniyi
  * @version 2022 - 12 - 12
