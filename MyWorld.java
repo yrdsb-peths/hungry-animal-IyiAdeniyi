@@ -84,6 +84,7 @@ public class MyWorld extends World
         if(score>highscore)
         {
             highscore = score;
+            highscoreLabel.setValue(highscore);
         }
     }
     
