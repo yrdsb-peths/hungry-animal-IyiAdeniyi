@@ -24,11 +24,6 @@ public class TitleScreen extends World
         prepare();
     }
     
-    public void setValue(int value)
-    {
-        MyWorld.getScore(); 
-    }
-
     /**
      * THe main world act loop
      */

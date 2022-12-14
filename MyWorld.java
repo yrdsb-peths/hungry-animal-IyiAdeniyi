@@ -9,15 +9,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     public static int score = 0;
-    public boolean gameOver = false;
-    public boolean store;
-
+    public static int highscore;
+    
     Label scoreLabel;
+    Label highscoreLabel;
     
     int level = 1;
     /**
      * Constructor for objects of class MyWorld.
-     * 
      */
     public MyWorld()
     {    
@@ -30,43 +29,43 @@ public class MyWorld extends World
         
         //create a label
         scoreLabel = new Label(0, 80);
-        addObject(scoreLabel, 40, 40 );
+        addObject(scoreLabel, 40, 45 );
+        Label scoreTitle = new Label("Current score", 22);
+        addObject(scoreTitle, 50, 10);
+        
+        //create highscore label
+        highscoreLabel = new Label(highscore, 80);
+        addObject(highscoreLabel, 500, 40);
+        Label highscoreTitle = new Label("High score", 22);
+        addObject(highscoreTitle, 500, 10);
         
         createApple();
     }
-    
     
     public void gameOver()
     {
         Label gameOverLabel = new Label("Game over", 100);
         addObject(gameOverLabel, 300, 100);
-        Label resetGame = new Label("press space bar to play again", 50);
-        addObject(resetGame, 300, 200);
-        boolean gameOver = true;
         
+        Label resetGame = new Label("press enter to play again", 50);
+        addObject(resetGame, 300, 200);
+        
+        Label exit = new Label("press esc to exit game", 50);
+        addObject(exit, 300, 150);
     }
     
     public void act()
     {
-        if(Greenfoot.isKeyDown("space"))
+        if(Greenfoot.isKeyDown("enter"))
         {
             TitleScreen a = new TitleScreen();
             Greenfoot.setWorld(a);
         }
-    }
-    
-    public static void setScore(int latestScore)
-    {
-        score = latestScore;
-        if (score > MyWorld.getScore())
-       {
-         MyWorld.setScore(score);
-       }
-    }
-
-    public static int getScore()
-    {
-        return score;
+        
+        if(Greenfoot.isKeyDown("esc"))
+        {
+            System.exit(0);
+        }
     }
     
     public void increaseScore()
@@ -78,11 +77,19 @@ public class MyWorld extends World
         {
             level +=1;
         }
-        
-        
     }
     
-
+    public void setHighScore()
+    {
+        if(score>highscore)
+        {
+            highscore = score;
+        }
+    }
+    
+    /**
+     * Create a new apple at random location at top of screen.
+     */
     public void createApple()
     {
         Apple apple = new Apple();
