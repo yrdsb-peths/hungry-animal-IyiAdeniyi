@@ -25,11 +25,6 @@ public class TitleScreen extends World
     public void act()
     {
         //stat the game if the user presses space bar
-        if(Greenfoot.isKeyDown("space"))
-        {
-            MyWorld gameWorld = new MyWorld();
-            Greenfoot.setWorld(gameWorld);
-        }
     }
     
     /**
@@ -41,15 +36,14 @@ public class TitleScreen extends World
         Elephant elephant = new Elephant();
         addObject(elephant,399,97);
 
-        Label label = new Label("press <space> to start", 40);
-        addObject(label,216,228);
-
         Label label2 = new Label("use \u2190 and \u2192 to move", 40);
-        addObject(label2,214,288);
+        addObject(label2,300,200);
 
         elephant.setLocation(477,268);
         HungryElephant hungryElephant = new HungryElephant();
         addObject(hungryElephant,281,37);
-        hungryElephant.setLocation(348,37);
+
+        StartGame startGame = new StartGame();
+        addObject(startGame,300,150);
     }
 }
