@@ -8,18 +8,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Elephant extends Actor
 {
-    /**
-     * Act - do whatever the Elephant wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    
     GreenfootSound elephantSound = new GreenfootSound("elephantcub.mp3");
     GreenfootImage idleRight[] = new GreenfootImage[8];
     GreenfootImage idleLeft[] = new GreenfootImage[8];
 
-
+    //Direction the elephant is facing
     String facing = "right";
     SimpleTimer animationTimer = new SimpleTimer();
+    /**
+     * Constructor = The code that gets run one time when object is created
+     */
     public Elephant()
     {
         for(int i = 0; i < idleRight.length; i++)
@@ -37,9 +35,13 @@ public class Elephant extends Actor
         
         animationTimer.mark();
         
+        //Initial elephant image
         setImage(idleRight[0]);
     }
     
+    /**
+     * Animate the elephant
+     */
     int imageIndex = 0;
     public void animateElephant()
     {
@@ -76,12 +78,13 @@ public class Elephant extends Actor
             move(4);
             facing = "right";
         }
+        //remove apple if elephant eats it
         eat();
         
         //Animate the elphant
         animateElephant();
     }
-    //executes when the elephant touches "eats" the apple
+    
     public void eat()
     {
         if(isTouching(Apple.class))

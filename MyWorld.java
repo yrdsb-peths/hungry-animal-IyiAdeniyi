@@ -42,18 +42,6 @@ public class MyWorld extends World
         createApple();
     }
     
-    public void gameOver()
-    {
-        Label gameOverLabel = new Label("Game over", 100);
-        addObject(gameOverLabel, 300, 100);
-        
-        Label resetGame = new Label("press enter to play again", 50);
-        addObject(resetGame, 300, 200);
-        
-        Label exit = new Label("press esc to exit game", 50);
-        addObject(exit, 300, 150);
-    }
-    
     public void act()
     {
         if(Greenfoot.isKeyDown("enter"))
@@ -68,6 +56,24 @@ public class MyWorld extends World
         }
     }
     
+    /**
+     * End the game and draw 'GameOver'
+     */
+    public void gameOver()
+    {
+        Label gameOverLabel = new Label("Game over", 100);
+        addObject(gameOverLabel, 300, 100);
+        
+        Label resetGame = new Label("press enter to play again", 50);
+        addObject(resetGame, 300, 200);
+        
+        Label exit = new Label("press esc to exit game", 50);
+        addObject(exit, 300, 150);
+    }
+    
+    /**
+     * Increase score
+     */
     public void increaseScore()
     {
         score++;
@@ -79,6 +85,9 @@ public class MyWorld extends World
         }
     }
     
+    /**
+     * set highscore
+     */
     public void setHighScore()
     {
         if(score>=highscore)

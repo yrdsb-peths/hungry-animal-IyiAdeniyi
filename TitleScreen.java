@@ -8,9 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class TitleScreen extends World
 {
+
     /**
      * Constructor for objects of class TitleScreen.
-     * 
      */
     public TitleScreen()
     {    
@@ -20,7 +20,7 @@ public class TitleScreen extends World
     }
     
     /**
-     * THe main world act loop
+     * The main world act loop
      */
     public void act()
     {
@@ -47,9 +47,9 @@ public class TitleScreen extends World
         Label label2 = new Label("use \u2190 and \u2192 to move", 40);
         addObject(label2,214,288);
 
-        Title title = new Title();
-        addObject(title,309,36);
-
         elephant.setLocation(477,268);
+        HungryElephant hungryElephant = new HungryElephant();
+        addObject(hungryElephant,281,37);
+        hungryElephant.setLocation(348,37);
     }
 }
