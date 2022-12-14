@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Elephant here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Iyi Adeniyi
+ * @version 2022- 12 - 13
  */
 public class Elephant extends Actor
 {
@@ -48,7 +48,7 @@ public class Elephant extends Actor
             return;
         }
         animationTimer.mark();
-        
+        //changes the direction the elephant is facing
         if(facing.equals("right"))
         {
         setImage(idleRight[imageIndex]);
@@ -63,11 +63,14 @@ public class Elephant extends Actor
     
     public void act()
     {
+        //when left key is pressed moves the elephant left
         if(Greenfoot.isKeyDown("left"))
         {
             move(-4);
             facing = "left";
         }
+        //when right key is pressed moves the elephant right
+
         else if(Greenfoot.isKeyDown("right"))
         {
             move(4);
@@ -78,7 +81,7 @@ public class Elephant extends Actor
         //Animate the elphant
         animateElephant();
     }
-    
+    //executes when the elephant touches "eats" the apple
     public void eat()
     {
         if(isTouching(Apple.class))

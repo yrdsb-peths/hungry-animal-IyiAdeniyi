@@ -31,7 +31,7 @@ public class MyWorld extends World
         scoreLabel = new Label(0, 80);
         addObject(scoreLabel, 40, 45 );
         Label scoreTitle = new Label("Current score", 22);
-        addObject(scoreTitle, 50, 10);
+        addObject(scoreTitle, 58, 10);
         
         //create highscore label
         highscoreLabel = new Label(highscore, 80);
@@ -81,7 +81,7 @@ public class MyWorld extends World
     
     public void setHighScore()
     {
-        if(score>highscore)
+        if(score>=highscore)
         {
             highscore = score;
             highscoreLabel.setValue(highscore);
