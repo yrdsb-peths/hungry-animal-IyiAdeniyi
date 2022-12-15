@@ -40,7 +40,9 @@ public class MyWorld extends World
         Label highscoreTitle = new Label("High score", 22);
         addObject(highscoreTitle, 500, 10);
         
+        //spawns the apple
         createApple();
+        createBadApple();
     }
     
     public void act()
@@ -62,6 +64,7 @@ public class MyWorld extends World
      */
     public void gameOver()
     {
+
         Label gameOverLabel = new Label("Game over", 100);
         addObject(gameOverLabel, 300, 100);
         
@@ -70,8 +73,6 @@ public class MyWorld extends World
         
         Exit exit = new Exit();
         addObject(exit, 300, 160);
-        
-        
     }
     
     /**
@@ -110,5 +111,18 @@ public class MyWorld extends World
         int x = Greenfoot.getRandomNumber(600);
         int y = 0;
         addObject(apple, x,y);
+    }
+    
+    /**
+     * Create a bad apple at a random place.
+     */
+    
+    public void createBadApple()
+    {
+        BadApple badapple = new BadApple();
+        badapple.setZoom(level);
+        int x = Greenfoot.getRandomNumber(600);
+        int y = 0;
+        addObject(badapple, x,y);
     }
 }
