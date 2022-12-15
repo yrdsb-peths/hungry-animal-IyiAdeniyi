@@ -20,14 +20,6 @@ public class TitleScreen extends World
     }
     
     /**
-     * The main world act loop
-     */
-    public void act()
-    {
-        //stat the game if the user presses space bar
-    }
-    
-    /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
      */

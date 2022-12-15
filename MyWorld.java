@@ -64,11 +64,13 @@ public class MyWorld extends World
         Label gameOverLabel = new Label("Game over", 100);
         addObject(gameOverLabel, 300, 100);
         
-        Label resetGame = new Label("press enter to play again", 50);
+        PlayAgain resetGame = new PlayAgain();
         addObject(resetGame, 300, 200);
         
-        Label exit = new Label("press esc to exit game", 50);
-        addObject(exit, 300, 150);
+        Exit exit = new Exit();
+        addObject(exit, 300, 160);
+        
+        
     }
     
     /**
