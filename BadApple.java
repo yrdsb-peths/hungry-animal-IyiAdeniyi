@@ -27,7 +27,8 @@ public class BadApple extends Actor
         if(isTouching(Elephant.class))
         {
             world.gameOver();
-            world.removeObject(apple);
+            world.removeObject(this);
+
         }
 
     }

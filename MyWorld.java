@@ -11,7 +11,7 @@ public class MyWorld extends World
 {
     public int score = 0;
     public static int highscore;
-    
+    public boolean gameover;
     Label scoreLabel;
     Label highscoreLabel;
     
@@ -73,6 +73,11 @@ public class MyWorld extends World
         
         Exit exit = new Exit();
         addObject(exit, 300, 160);
+        
+        Apple apple = new Apple();
+        removeObject(apple);
+        
+        gameover = true;
     }
     
     /**
