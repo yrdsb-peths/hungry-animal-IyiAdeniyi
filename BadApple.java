@@ -30,6 +30,11 @@ public class BadApple extends Actor
             world.removeObject(this);
 
         }
+        
+        if(world.gameover ==true)
+        {
+            world.removeObject(this);
+        }
 
     }
     
